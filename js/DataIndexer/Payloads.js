@@ -1,20 +1,20 @@
 var config = require('../../config');
 var payloads = {};
 
-payloads.dataSourcePayload = {
-  "name": config.dataSourceName,
-  "description": "AllContacts Dataset",
-  "type": config.dataSourceType,
-  "credentials": { "connectionString: config.connectionString" },
-  "container": { "name": config.tableName }
+payloads.dataSourcePayload = { 
+    "name" : config.dataSourceName,
+    "description" : "USGS Dataset",
+    "type" : config.dataSourceType,
+    "credentials" : { "connectionString" : config.connectionString },
+    "container" : { "name" : config.tableName }
 };
 
 payloads.indexerPayload = {
-  "name": config.indexerName,
-  "description": "AllContacts data indexer",
-  "dataSourceName": config.dataSourceName,
-  "targetIndexType": config.indexName,
-  "parameters": { "maxFailedItems": config.maxFailedItems, "maxFailedItemsPerBatch": config.maxFailedItemsPerBatch, "base64EncodeKeys": config.base64EncodeKeys }
+    "name" : config.indexerName,
+    "description" : "USGS data indexer",
+    "dataSourceName" : config.dataSourceName,
+    "targetIndexName" : config.indexName,
+    "parameters" : {    "useJsonParser" : true }
 };
 
 payloads.indexPayload = {
@@ -37,10 +37,7 @@ payloads.indexPayload = {
     "retrievable": true,
     "sortable": true,
     "facetable": true,
-    "key": false,
-    "indexAnalyzer": null,
-    "searchAnalyzer": null,
-    "analyzer": null
+    "key": false    
   }, {
     "name": "uuid",
     "type": "Edm.String",
@@ -881,15 +878,7 @@ payloads.indexPayload = {
     "sortable": true,
     "facetable": true,
     "key": false
-  }, {
-    "name": "value",
-    "type": "Collection(Edm.String)",
-    "searchable": true,
-    "filterable": true,
-    "retrievable": true,
-    "sortable": false,
-    "facetable": true,
-    "key": false
+    }
   ],
   "scoringProfiles": [],
   "defaultScoringProfile": null,
@@ -897,7 +886,6 @@ payloads.indexPayload = {
   {
     "allowedOrigins": ["*"],
     "maxAgeInSeconds": 300
-  },
-  "suggestors": []
+  }
 };
 module.exports = payloads;
