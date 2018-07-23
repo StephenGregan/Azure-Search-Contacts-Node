@@ -191,7 +191,7 @@ var runIndexer = function(){
         url: url,
         headers: headers,
         withCredentials: false
-    };
+    };  
         
     request.post(options, function(error, response, body){
         console.info("run indexer result: " + response.statusCode);

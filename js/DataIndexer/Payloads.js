@@ -3,7 +3,7 @@ var payloads = {};
 
 payloads.dataSourcePayload = { 
     "name" : config.dataSourceName,
-    "description" : "USGS Dataset",
+    "description" : "Interpreter Intelligence Dataset",
     "type" : config.dataSourceType,
     "credentials" : { "connectionString" : config.connectionString },
     "container" : { "name" : config.tableName }
@@ -11,12 +11,11 @@ payloads.dataSourcePayload = {
 
 payloads.indexerPayload = {
     "name" : config.indexerName,
-    "description" : "USGS data indexer",
+    "description" : "Interpreter Intelligence data indexer",
     "dataSourceName" : config.dataSourceName,
     "targetIndexName" : config.indexName,
-    "parameters" : {    "useJsonParser" : true }
+    "parameters" : { "useJsonParser" : config.useJsonParser, "parsingMode" : config.parsingMode, "maxFailedItems" : config.maxFailedItems, "maxFailedItemsPerBatch" : config.maxFailedItemsPerBatch, "base64EncodeKeys": config.base64EncodeKeys }
 };
-
 payloads.indexPayload = {
   "name": config.indexName,
   "fields": [
