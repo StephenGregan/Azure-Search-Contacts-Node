@@ -1,24 +1,24 @@
 var config = {};
 
-config.apiKey = "{SearchApiKey}";
+config.apiKey = "{ SearchApiKey }";
 
-config.queryKey = "{SearchQueryKey}";
+config.queryKey = "{ SearchQueryKey }";
 
-config.serviceURL = "https://{SearchServiceName}.search.windows.net";
+config.serviceURL = "https://{ SearchServiceName }.search.windows.net";
 
-config.dataSourceName = "{DataSourceName}";
+config.dataSourceName = "{ DataSourceName }";
 
-config.indexerName = "{IndexerName}";
+config.indexerName = "{ IndexerName }";
 
-config.indexName = "{IndexName}";
+config.indexName = "{ IndexName }";
 
 config.apiVersion = "2015-02-28-Preview";
 
-config.connectionString = "{BlobStorageConnectionString}";
+config.connectionString = "{ BlobStorageConnectionString }";
 
-config.tableName = "{BlobtableName}";
+config.tableName = "{ BlobTableName }";
 
-config.dataSourceType = "{DataSourceType}"; // azureBlob, azureSql... 
+config.dataSourceType = "{ DataSourceType }"; // azureBlob, azureSql... 
 
 config.useJsonParser = true;
 
